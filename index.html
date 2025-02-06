@@ -1,0 +1,62 @@
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Meal Finder</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <nav>
+      <form class="input-container">
+        <input
+          type="text"
+          class="input"
+          placeholder="Pizza, salad, tacos, eggs..."
+        />
+        <i class="fa-solid fa-magnifying-glass magnifier"></i>
+      </form>
+
+      <button class="random">Random recipes!</button>
+    </nav>
+    <main class="top-content">
+      <div class="container">
+        <div class="img"></div>
+
+        <div class="content-container">
+          <h1 class="title">Find the recipe for your favorite food</h1>
+          <section class="ingredients"></section>
+          <button class="main-btn">$20 - Order Now</button>
+        </div>
+      </div>
+    </main>
+
+    <section class="info-container">
+      <p class="info">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde nostrum
+        consequatur, nulla explicabo vero nesciunt architecto officiis eius
+        ullam alias.
+      </p>
+    </section>
+
+    <p class="error-message" style="display: none">
+      No meals found in this category or search term.
+    </p>
+
+    <footer>
+      <div class="footer-content">
+        <span>Source : TheMealDBAPI</span>
+        <span>Source : 2025@ Copyright </span>
+        <span>Source : Jessica Garrido </span>
+      </div>
+    </footer>
+
+    <script src="app.js"></script>
+  </body>
+</html>

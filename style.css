@@ -1,0 +1,192 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Playfair Display", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffffff8b;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #593316;
+  padding: 5px;
+  width: 300px;
+  height: 50px;
+  border-radius: 50px;
+  margin: 10px;
+  position: relative;
+  transition: width 1.5s;
+}
+
+button.random {
+  border: 1px solid #593316;
+  background-color: #7d5639;
+  padding: 5px 20px;
+  border-radius: 50px;
+  height: 50px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+button.random:hover {
+  border: 1px solid #593316;
+  background-color: #ffffff;
+  padding: 5px 20px;
+  border-radius: 50px;
+  height: 50px;
+  color: black;
+}
+
+.input {
+  margin: 10px 50px;
+  margin-left: 20px;
+  width: 100%;
+  color: #593316;
+  border: none;
+  background: transparent;
+  outline: none;
+  transition-delay: 0.5s;
+}
+
+.magnifier {
+  position: absolute;
+  right: 15px;
+  width: 25px;
+  text-align: center;
+  margin: 0 auto;
+  cursor: pointer;
+  color: #ffa31a;
+}
+
+ul li {
+  display: inline;
+  margin-left: 40px;
+  font-family: sans-serif;
+  cursor: pointer;
+}
+
+main.top-content {
+  display: flex;
+  justify-content: center;
+  height: 80vh;
+  background: #603813; 
+  background: -webkit-linear-gradient(
+    to right,
+    #b29f94,
+    #603813
+  ); 
+  background: linear-gradient(
+    to right,
+    #b29f94,
+    #603813
+  ); 
+}
+
+.container {
+  width: 70%;
+  padding: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.content-container {
+  width: 50%;
+}
+
+.content-container h1 {
+  font-family: sans-serif;
+  font-size: 2rem;
+}
+
+.img {
+  width: 550px;
+  height: 550px;
+  -webkit-mask-image: url("mask.png");
+  mask-image: url("mask.png");
+  mask-size: cover;
+  background: url("cheeseburger.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.ingredients {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ingredients .ing {
+  display: flex;
+  list-style: none;
+  gap: 15px;
+  padding: 10px 20px;
+  border: 2px solid #f1efee;
+  font-family: sans-serif;
+  border-radius: 5px;
+  width: fit-content;
+}
+
+.main-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  border: 2px solid #1a53ff;
+  padding: 10px;
+  color: #ffa31a;
+}
+
+section.info-container {
+  width: 100%;
+  background-color: rgb(122, 37, 37);
+  margin: 50px 0;
+}
+
+.info {
+  width: 60%;
+  margin: auto;
+  color: #593316;
+}
+
+.error-message {
+  color: red;
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  color: #603813;
+  border-top: 2px solid #b29f94;
+  margin: auto;
+}
+
+footer div.footer-content {
+  display: flex;
+  justify-content: space-between;
+  width: 70%;
+}
