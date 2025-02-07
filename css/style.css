@@ -13,11 +13,13 @@ body {
   font-style: normal;
 }
 
+/* Section navbar  */
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   background-color: #ffffff8b;
+  margin: 20px 0 40px 0;
 }
 
 .input-container {
@@ -31,34 +33,6 @@ nav {
   margin: 10px;
   position: relative;
   transition: width 1.5s;
-}
-
-.categories-list {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  color: #593316;
-}
-
-button.random {
-  border: 1px solid #593316;
-  background-color: #7d5639;
-  padding: 5px 20px;
-  border-radius: 50px;
-  height: 50px;
-  color: white;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-}
-
-button.random:hover {
-  border: 1px solid #593316;
-  background-color: #ffffff;
-  padding: 5px 20px;
-  border-radius: 50px;
-  height: 50px;
-  color: black;
 }
 
 .input {
@@ -82,6 +56,35 @@ button.random:hover {
   color: #ffa31a;
 }
 
+button.random {
+  border: 1px solid #593316;
+  background-color: #7d5639;
+  padding: 5px 20px;
+  border-radius: 50px;
+  height: 50px;
+  color: white;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+}
+
+button.random:hover {
+  border: 1px solid #593316;
+  background-color: #ffffff;
+  padding: 5px 20px;
+  border-radius: 50px;
+  height: 50px;
+  color: black;
+}
+
+/* Section list categories  */
+.categories-list {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  color: #593316;
+}
+
 ul li {
   display: inline;
   margin-left: 40px;
@@ -89,33 +92,116 @@ ul li {
   cursor: pointer;
 }
 
+/* Section slider categories  */
+
+.slider-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 70%;
+  margin: auto;
+}
+
+.category-meals {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 2rem;
+  color: #593316;
+  padding: 40px 60px;
+  overflow-x: scroll; 
+  scroll-behavior: smooth; 
+  white-space: nowrap; 
+  scrollbar-width: none; 
+}
+
+.category-meals::-webkit-scrollbar {
+  display: none;
+}
+
+.arrow-left,
+.arrow-right {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(255, 255, 255);
+  color: #593316;
+  font-size: 30px;
+  cursor: pointer;
+  z-index: 999;
+  display: none;
+}
+
+.category-meals.show-arrows + .arrow-left,
+.category-meals.show-arrows + .arrow-right {
+  display: block; /* Afficher les flèches lorsque la classe .show-arrows est ajoutée */
+}
+
+.arrow-left {
+  left: -50;
+}
+
+.arrow-right {
+  right: -50;
+}
+
+.category-meals.hidden {
+  opacity: 0;
+  pointer-events: none; /* Éviter les clics pendant l'animation */
+}
+
+.meal-img {
+  width: 150px;
+  border-radius: 50%;
+  filter: brightness(70%);
+  transition: filter 0.3s ease;
+  cursor: pointer;
+}
+
+.meal-img:hover {
+  filter: brightness(100%);
+}
+
+/* Recipe content  */
 main.top-content {
   display: flex;
   justify-content: center;
-  height: 80vh;
-  background: #603813; 
-  background: -webkit-linear-gradient(
-    to right,
-    #b29f94,
-    #603813
-  ); 
-  background: linear-gradient(
-    to right,
-    #b29f94,
-    #603813
-  ); 
+  height: auto;
+  background: #603813;
+  background: -webkit-linear-gradient(to right, #b29f94, #603813);
+  background: linear-gradient(to right, #b29f94, #603813);
 }
 
 .container {
   width: 70%;
   padding: 3rem;
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
 }
 
 .content-container {
   width: 50%;
+  opacity: 1;
+  transform: none;
+  transition: none;
+}
+.content-container.visible {
+  opacity: 1;
+  transform: none;
+}
+
+@keyframes slide-in {
+  from {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
 .content-container h1 {
@@ -152,83 +238,10 @@ main.top-content {
   width: fit-content;
 }
 
-.main-btn {
-  display: none;
-  background: transparent;
-  border: none;
-  border: 2px solid #1a53ff;
-  padding: 10px;
-  color: #ffa31a;
-}
-
-.slider-container {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.category-meals {
-  display: flex;
-  align-items: center;
-  justify-content: flex-start; /* Aligner les images sur une seule ligne */
-  gap: 2rem;
-  color: #593316;
-  padding: 40px 60px;
-  overflow-x: scroll; /* Permet le défilement horizontal */
-  scroll-behavior: smooth; /* Pour un défilement fluide */
-  white-space: nowrap; /* Empêche les retours à la ligne des images */
-  scrollbar-width: none; /* Masquer la barre de défilement sur Firefox */
-}
-
-.category-meals::-webkit-scrollbar {
-  display: none; /* Masquer la barre de défilement sur Chrome, Safari et Edge */
-}
-
-.arrow-left, .arrow-right {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255);
-  color: #593316;
-  font-size: 30px;
-  border: 2px solid red;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 999;
-  display: none; 
-}
-
-.category-meals.show-arrows + .arrow-left, .category-meals.show-arrows + .arrow-right {
-  display: block; /* Afficher les flèches lorsque la classe .show-arrows est ajoutée */
-}
-
-.arrow-left {
-  left: 20;
-}
-
-.arrow-right {
-  right: 20;
-}
-
-.category-meals.hidden {
-  opacity: 0;
-  pointer-events: none; /* Éviter les clics pendant l'animation */
-}
-
-.meal-img {
-  width: 150px;
-  border-radius: 50%;
-  filter: brightness(70%);
-  transition: filter 0.3s ease;
-}
-
-.meal-img:hover {
-  filter: brightness(100%);
-}
-
+/* Section steps */
 section.section-info-container {
   color: #593316;
+  display: none;
 }
 
 section.section-info-container .info-container {

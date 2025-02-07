@@ -1,8 +1,6 @@
-// category.js
-
 import { fetchMealsByCategory } from './fetchMealData.js';
 import { showMealInfo } from './mealDisplay.js';
-import { fetchMealDetails } from './fetchMealData.js'; // Importer la fonction fetchMealDetails
+import { fetchMealDetails } from './fetchMealData.js'; 
 
 export const displayMealsByCategory = async (category) => {
   try {
@@ -27,7 +25,7 @@ export const displayMealsByCategory = async (category) => {
       mealCards.forEach(card => {
         card.addEventListener("click", async () => {
           const mealId = card.dataset.id;
-          const mealDetails = await fetchMealDetails(mealId); // Utiliser fetchMealDetails ici
+          const mealDetails = await fetchMealDetails(mealId); 
           if (mealDetails) {
             showMealInfo(mealDetails);
             document.querySelector(".top-content").scrollIntoView({ behavior: "smooth" });
