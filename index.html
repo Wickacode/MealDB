@@ -22,9 +22,18 @@
         />
         <i class="fa-solid fa-magnifying-glass magnifier"></i>
       </form>
-
       <button class="random">Random recipes!</button>
     </nav>
+
+    <ul class="categories-list"></ul>
+    <section class="slider-container">
+      <button class="arrow-left">←</button>
+      <section class="category-meals">
+        <!-- Les images seront injectées ici dynamiquement -->
+      </section>
+      <button class="arrow-right">→</button>
+    </section>
+
     <main class="top-content">
       <div class="container">
         <div class="img"></div>
@@ -37,12 +46,18 @@
       </div>
     </main>
 
-    <section class="info-container">
-      <p class="info">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde nostrum
-        consequatur, nulla explicabo vero nesciunt architecto officiis eius
-        ullam alias.
-      </p>
+    <section id="section-info-container" class="section-info-container">
+      <div class="info-container">
+        <h2>Steps of preparation :</h2>
+        <div class="steps-container">
+          <p class="info">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde
+            nostrum consequatur, nulla explicabo vero nesciunt architecto
+            officiis eius ullam alias.
+          </p>
+          <img src="chef.png" alt="" />
+        </div>
+      </div>
     </section>
 
     <p class="error-message" style="display: none">
@@ -52,8 +67,8 @@
     <footer>
       <div class="footer-content">
         <span>Source : TheMealDBAPI</span>
-        <span>Source : 2025@ Copyright </span>
-        <span>Source : Jessica Garrido </span>
+        <span> 2025@ Copyright </span>
+        <span>Author : Jessica Garrido </span>
       </div>
     </footer>
 
