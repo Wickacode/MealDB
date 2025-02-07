@@ -126,10 +126,10 @@ main.top-content {
 .img {
   width: 550px;
   height: 550px;
-  -webkit-mask-image: url("mask.png");
-  mask-image: url("mask.png");
+  -webkit-mask-image: url("../assets/mask.png");
+  mask-image: url("../assets/mask.png");
   mask-size: cover;
-  background: url("cheeseburger.jpg");
+  background: url("../assets/cheeseburger.jpg");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
