@@ -1,13 +1,15 @@
 export const fetchMealDataBySearch = async (val) => {
-    try {
-      const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${val}`);
-      const { meals } = await res.json();
-      return meals;
-    } catch (err) {
-      console.error("Erreur lors de la recherche :", err);
-      return null;
-    }
-  };
+  try {
+    const res = await fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${val}`);
+    const { meals } = await res.json();
+    
+    // Retourne null si `meals` est un tableau vide ou undefined
+    return meals && meals.length > 0 ? meals : null;
+  } catch (err) {
+    console.error("Erreur lors de la recherche :", err);
+    return null;
+  }
+};
   
   export const fetchMealsByCategory = async (category) => {
     try {

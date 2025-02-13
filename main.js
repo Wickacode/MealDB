@@ -1,9 +1,6 @@
-// main.js
-
 import { fetchMealDataBySearch, fetchRandomMeal, fetchMealCategories } from './js/modules/fetchMealData.js';
 import { showMealInfo, showAlert } from './js/modules/mealDisplay.js';
 import { displayMealsByCategory } from './js/modules/category.js';
-import { initializeSlider } from './js/modules/slider.js';
 
 const form = document.querySelector("form");
 form.addEventListener("submit", async (e) => {
@@ -21,11 +18,13 @@ form.addEventListener("submit", async (e) => {
 
   if (val) {
     const meals = await fetchMealDataBySearch(val);
-    if (!meals) {
+    if (!meals || meals.length === 0) {
       showAlert();
       return;
     }
+    errorMessage.style.display = "none";
     meals.forEach(showMealInfo);
+
   } else {
     alert("Please try searching for a meal :)");
   }

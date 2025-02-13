@@ -28,11 +28,7 @@
     <ul class="categories-list"></ul>
 
     <section class="slider-container">
-      <button class="arrow-left"><i class="fa-solid fa-caret-left"></i></button>
       <section class="category-meals"></section>
-      <button class="arrow-right">
-        <i class="fa-solid fa-caret-right"></i>
-      </button>
     </section>
 
     <main class="top-content">
@@ -43,22 +39,25 @@
           <h1 class="title">Find the recipe for your favorite food</h1>
           <div class="content-presentation">
             <p>
-            Hello and thank you for visiting! I'm Jessica, and this platform was
-            developed as a personal project to practice web development, with a
-            specific focus on API integration.
-          </p>
-          <p>
-            Here, you'll find a diverse selection of recipes sourced from the
-            MealDB API, a database available exclusively in English, offering a
-            wide variety of delicious dishes from around the world.
-          </p>
-          <p>
-            The goal of this project was to enhance my skills in working with
-            APIs while creating a user-friendly interface to discover new
-            culinary ideas. Enjoy exploring and happy cooking!
-          </p>
+              Hello and thank you for visiting! I'm Jessica, and this platform
+              was developed as a personal project to practice web development,
+              with a specific focus on API integration.
+            </p>
+            <p>
+              Here, you'll find a diverse selection of recipes sourced from the
+              MealDB API, a database available exclusively in English, offering
+              a wide variety of delicious dishes from around the world.
+            </p>
+            <p>
+              The goal of this project was to enhance my skills in working with
+              APIs while creating a user-friendly interface to discover new
+              culinary ideas. Enjoy exploring and happy cooking!
+            </p>
           </div>
-          
+          <p class="error-message" style="display: none">
+            Sorry, no meals found in this category or search term :(
+          </p>
+
           <section class="ingredients"></section>
         </div>
       </div>
@@ -66,21 +65,17 @@
 
     <section id="section-info-container" class="section-info-container">
       <div class="info-container">
-        <h2>Steps of preparation :</h2>
         <div class="steps-container">
+          <h2>Steps of preparation :</h2>
           <p class="info">
             Lorem ipsum dolor sit amet consectetur, adipisicing elit. Unde
             nostrum consequatur, nulla explicabo vero nesciunt architecto
             officiis eius ullam alias.
           </p>
-          <img src="assets/chef.png" alt="" />
         </div>
+        <img src="assets/chef.png" alt="" />
       </div>
     </section>
-
-    <p class="error-message" style="display: none">
-      No meals found in this category or search term.
-    </p>
 
     <footer>
       <div class="footer-content">

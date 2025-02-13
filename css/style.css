@@ -1,14 +1,21 @@
-@import url("https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 * {
   box-sizing: border-box;
+  font-family: "Poppins", sans-serif !important;
+}
+
+i,
+.fa,
+.fa-solid {
+  font-family: "Font Awesome 5 Free", sans-serif !important;
+  font-weight: 900;
 }
 
 body {
   margin: 0;
   padding: 0;
   color: white;
-  font-family: "Playfair Display", serif;
   font-optical-sizing: auto;
   font-style: normal;
 }
@@ -83,6 +90,7 @@ button.random:hover {
   align-items: center;
   justify-content: center;
   color: #593316;
+  margin-bottom: 40px;
 }
 
 ul li {
@@ -96,7 +104,7 @@ ul li {
 
 .slider-container {
   position: relative;
-  display: flex;
+  display: none;
   align-items: center;
   justify-content: center;
   width: 70%;
@@ -110,40 +118,14 @@ ul li {
   gap: 2rem;
   color: #593316;
   padding: 40px 60px;
-  overflow-x: scroll; 
-  scroll-behavior: smooth; 
-  white-space: nowrap; 
-  scrollbar-width: none; 
+  overflow-x: auto; /* Assurez-vous que l'overflow est bien "auto" */
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  scrollbar-width: none; /* Cache la barre de défilement sur Firefox */
 }
 
 .category-meals::-webkit-scrollbar {
-  display: none;
-}
-
-.arrow-left,
-.arrow-right {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(255, 255, 255);
-  color: #593316;
-  font-size: 30px;
-  cursor: pointer;
-  z-index: 999;
-  display: none;
-}
-
-.category-meals.show-arrows + .arrow-left,
-.category-meals.show-arrows + .arrow-right {
-  display: block; /* Afficher les flèches lorsque la classe .show-arrows est ajoutée */
-}
-
-.arrow-left {
-  left: -50;
-}
-
-.arrow-right {
-  right: -50;
+  display: none; /* Cache la barre de défilement sur Chrome et Safari */
 }
 
 .category-meals.hidden {
@@ -242,27 +224,31 @@ main.top-content {
 section.section-info-container {
   color: #593316;
   display: none;
+  margin: 50px 0;
 }
 
 section.section-info-container .info-container {
+  display: flex;
   width: 70%;
   margin: auto;
+  align-items: center;
 }
 
 section.section-info-container .info-container .steps-container {
   display: flex;
-  align-items: center;
-  gap: 3rem;
+  flex-direction: column;
 }
 
-section.section-info-container .info-container .steps-container img {
-  width: 400px;
+section.section-info-container .info-container img {
+  width: 500px;
+  height: 500px;
+  object-fit: fill;
   transform: scaleX(-1);
 }
 
 .error-message {
-  color: red;
-  font-size: 16px;
+  color: rgb(226, 56, 56);
+  font-size: 20px;
   font-weight: bold;
   margin-top: 10px;
 }
@@ -275,7 +261,6 @@ footer {
   height: 50px;
   color: #603813;
   border-top: 2px solid #b29f94;
-  margin-top: 100px;
 }
 
 footer div.footer-content {
